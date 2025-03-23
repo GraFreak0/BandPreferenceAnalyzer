@@ -9,7 +9,7 @@ def parse_input(file_path):
         lines = file.readlines()
     
     try:
-        num_lines = int(lines[0].strip())  # Read the first line for number of inputs
+        num_lines = int(lines[0].strip())
     except ValueError:
         raise ValueError(f"Invalid number of lines in the input file: {lines[0].strip()}")
     
@@ -18,9 +18,9 @@ def parse_input(file_path):
     for line in lines[1:num_lines + 1]:
         line = line.strip()
         if not line or ":" not in line:
-            continue  # Skip malformed lines
+            continue
         
-        name, bands = line.split(": ", 1)  # Ensure splitting happens at the first colon
+        name, bands = line.split(": ", 1)
         band_list = bands.split(", ")
         
         for band in band_list:
